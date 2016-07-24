@@ -1,4 +1,7 @@
 # Wasted-Whale
+
+![Alt text](https://pbs.twimg.com/media/B5IzkfgCQAA2BME.jpg)
+
 Wasted Whale will be a game based on 'Canyon Bunny' by Suryakumar Balakrishnan Nair and Andreas Oehlke from their book 'Learning LibGDX Game Development - Second Edition'. 
 This project is an attempt to learn the proper way of setting up and creating a game in LibGDX the way the developers meant it to be done, and to learn some new tricks along the way.
 
