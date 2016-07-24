@@ -13,13 +13,21 @@ The level will be rndomly populated with collectible items consisting of beers, 
 
 Over the course of following the book i will cover:
 Gathering Resources - ie texture atlases, handling level data, creating a custom app icon
+
 Making a Scene - creating game objects, implementing a level loader, implementing a Gui
+
 Adding Actors - implementing actor game objects, adding game logic such as collision detection
+
 Menus and Options -  Managing multiple screens, exploring scene2D UI, using Scenegraphs, building the main menu and options screens
+
 Special Effects - particle systems, linear interpolation smoothing, paralex scrolling, enhancing the screens GUI
+
 Screen Transitions - interpolation algorithms, fade transition, slide transition, slice transition
+
 Managing Music and Sound Effects - playing back music and sound effects, accessing an audio device directily, using sound generators
+
 Advanced Programming Techniques - simulating physics with Box2D, Working with Shaders, Alternative input controls
+
 Animations - Manipulating actors through actions, Animating the menu screen, using sequences of images for animation
 
 
