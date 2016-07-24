@@ -3,6 +3,7 @@ package com.wolfkhan66.wastedwhale;
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -12,7 +13,7 @@ import com.badlogic.gdx.math.MathUtils;
 /**
  * Created by caile_000 on 24/07/2016.
  */
-public class WorldController {
+public class WorldController extends InputAdapter {
     private static final String TAG = WorldController.class.getName();
     public Sprite[] testSprites;
     public int selectedSprite;
@@ -22,7 +23,23 @@ public class WorldController {
     }
 
     public void init() {
+        Gdx.input.setInputProcessor(this);
         initTestObjects();
+    }
+
+    @Override
+    public boolean keyUp (int keycode){
+        // Reset game world
+        if (keycode == Input.Keys.R){
+            init();
+            Gdx.app.debug(TAG, "Game World Reset");
+        }
+        // Select next sprite
+        else if (keycode == Input.Keys.SPACE){
+            selectedSprite = (selectedSprite + 1) % testSprites.length;
+            Gdx.app.debug(TAG, "Sprite #" + selectedSprite + "selected");
+        }
+        return false;
     }
 
     private void initTestObjects() {
