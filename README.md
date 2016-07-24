@@ -11,7 +11,12 @@ The players character will move on and jump over to random rocks, sticking out o
 
 The level will be rndomly populated with collectible items consisting of beers, spirits and cocktails. collecting beers and spirits will increase the players score whilst cocktails will power up the player granting them the ability to swim for a limited time.
 
-Over the course of following the book i will cover:
+Below is the Class Diagram for Canyon Bunny, of which Wasted Whale will be following during its developmental phase:
+![Alt text](https://www.safaribooksonline.com/library/view/learning-libgdx-game/9781782166047/graphics/6047OS_03_02.jpg)
+
+
+Over the course of the book i will cover the following:
+
 Gathering Resources - ie texture atlases, handling level data, creating a custom app icon
 
 Making a Scene - creating game objects, implementing a level loader, implementing a Gui
