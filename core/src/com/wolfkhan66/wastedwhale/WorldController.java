@@ -17,6 +17,7 @@ public class WorldController extends InputAdapter {
     private static final String TAG = WorldController.class.getName();
     public Sprite[] testSprites;
     public int selectedSprite;
+    public CameraHelper cameraHelper;
 
     public WorldController() {
         init();
@@ -24,7 +25,14 @@ public class WorldController extends InputAdapter {
 
     public void init() {
         Gdx.input.setInputProcessor(this);
+        cameraHelper = new CameraHelper();
         initTestObjects();
+    }
+
+    public void update (float deltaTime) {
+        handleDebugInput(deltaTime);
+        updateTestObjects(deltaTime);
+        cameraHelper.update(deltaTime);
     }
 
     @Override
@@ -37,7 +45,16 @@ public class WorldController extends InputAdapter {
         // Select next sprite
         else if (keycode == Input.Keys.SPACE){
             selectedSprite = (selectedSprite + 1) % testSprites.length;
+            // Update camera's target to follow the currently selected sprite
+            if(cameraHelper.hasTarget()){
+                cameraHelper.setTarget(testSprites[selectedSprite]);
+            }
             Gdx.app.debug(TAG, "Sprite #" + selectedSprite + "selected");
+        }
+        // Toggle camera follow
+        else if (keycode == Input.Keys.ENTER){
+            cameraHelper.setTarget(cameraHelper.hasTarget() ? null : testSprites[selectedSprite]);
+            Gdx.app.debug(TAG, "Camera follow enabled: " + cameraHelper.hasTarget());
         }
         return false;
     }
@@ -94,11 +111,6 @@ public class WorldController extends InputAdapter {
         pixmap.drawRectangle(0, 0, width, height);
 
         return pixmap;
-    }
-
-    public void update (float deltaTime) {
-        handleDebugInput(deltaTime);
-        updateTestObjects(deltaTime);
     }
 
     private void handleDebugInput(float deltaTime){
