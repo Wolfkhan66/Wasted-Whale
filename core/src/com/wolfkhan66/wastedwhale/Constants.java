@@ -11,7 +11,7 @@ public class Constants {
     public static final float VIEWPORT_HEIGHT = 5.0f;
 
     // Location of Texture Atlas
-    public static final String TEXTURE_ATLAS_OBJECTS = "images/wastedwhale.pack";
+    public static final String TEXTURE_ATLAS_OBJECTS = "images/wasted_whale.pack.atlas";
 
 
 }

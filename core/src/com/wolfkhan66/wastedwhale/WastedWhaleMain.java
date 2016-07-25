@@ -3,6 +3,7 @@ package com.wolfkhan66.wastedwhale;
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
 
 public class WastedWhaleMain implements ApplicationListener {
@@ -16,6 +17,8 @@ public class WastedWhaleMain implements ApplicationListener {
 		// Set LibGDX log level to DEBUG
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
 
+		// Load assets
+		Assets.instance.init(new AssetManager());
 		// Initialize controller and renderer
 		worldController = new WorldController();
 		worldRenderer = new WorldRenderer(worldController);
@@ -56,5 +59,6 @@ public class WastedWhaleMain implements ApplicationListener {
 
 	@Override public void dispose() {
 		worldRenderer.dispose();
+		Assets.instance.dispose();
 	}
 }

@@ -19,7 +19,7 @@ public class DesktopLauncher {
 			settings.maxHeight = 1024;
 			settings.duplicatePadding = false;
 			settings.debug = drawDebugOutline;
-			TexturePacker.process(settings, "C:/Users/caile_000/Documents/GitHub/Wasted-Whale/desktop/assets-raw/images", "images", "wastedwhale.pack");
+			TexturePacker.process(settings, "C:/Users/caile_000/Documents/GitHub/Wasted-Whale/desktop/assets-raw/images", "images", "wasted_whale.pack");
 		}
 
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
