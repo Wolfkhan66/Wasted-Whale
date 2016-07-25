@@ -8,7 +8,7 @@ import com.wolfkhan66.wastedwhale.WastedWhaleMain;
 
 public class DesktopLauncher {
 
-	private static boolean rebuildAtlas = true;
+	private static boolean rebuildAtlas = false;
 	private static boolean drawDebugOutline = true;
 
 	public static void main (String[] arg) {
