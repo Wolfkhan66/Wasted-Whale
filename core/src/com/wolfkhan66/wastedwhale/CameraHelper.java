@@ -6,7 +6,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 
 /**
- * Created by caile_000 on 24/07/2016.
+ * Created by Cai Lehwald  on 24/07/2016.
  */
 public class CameraHelper {
     private static final String TAG = CameraHelper.class.getName();

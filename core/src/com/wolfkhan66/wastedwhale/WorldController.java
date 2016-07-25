@@ -12,7 +12,7 @@ import com.badlogic.gdx.utils.Array;
 
 
 /**
- * Created by caile_000 on 24/07/2016.
+ * Created by Cai Lehwald on 24/07/2016.
  */
 public class WorldController extends InputAdapter {
     private static final String TAG = WorldController.class.getName();

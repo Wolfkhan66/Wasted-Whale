@@ -6,6 +6,10 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
 
+/**
+ * Created by Cai Lehwald on 24/07/2016.
+ */
+
 public class WastedWhaleMain implements ApplicationListener {
 	private static final String TAG = WastedWhaleMain.class.getName();
 

@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Disposable;
 
 /**
- * Created by caile_000 on 24/07/2016.
+ * Created by Cai Lehwald on 24/07/2016.
  */
 public class WorldRenderer implements Disposable {
     private OrthographicCamera camera;

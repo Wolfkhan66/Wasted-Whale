@@ -9,7 +9,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.utils.Disposable;
 
 /**
- * Created by caile_000 on 25/07/2016.
+ * Created by Cai Lehwald on 25/07/2016.
  */
 public class Assets implements Disposable, AssetErrorListener{
 
