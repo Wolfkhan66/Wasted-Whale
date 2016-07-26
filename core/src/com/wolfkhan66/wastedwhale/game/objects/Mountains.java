@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.MathUtils;
 
 /**
- * Created by caile_000 on 26/07/2016.
+ * Created by Cai Lehwald on 26/07/2016.
  */
 public class Mountains extends com.wolfkhan66.wastedwhale.game.objects.AbstractGameObject {
 

@@ -4,7 +4,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 /**
- * Created by caile_000 on 25/07/2016.
+ * Created by Cai Lehwald on 25/07/2016.
  */
 public class Rock extends com.wolfkhan66.wastedwhale.game.objects.AbstractGameObject {
     private TextureRegion regEdge;
