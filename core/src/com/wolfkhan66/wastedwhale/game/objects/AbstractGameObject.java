@@ -1,4 +1,4 @@
-package com.wolfkhan66.wastedwhale;
+package com.wolfkhan66.wastedwhale.game.objects;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;

@@ -1,4 +1,4 @@
-package com.wolfkhan66.wastedwhale;
+package com.wolfkhan66.wastedwhale.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetDescriptor;
@@ -33,7 +33,7 @@ public class Assets implements Disposable, AssetErrorListener{
         assetManager.setErrorListener(this);
 
         // Load Texture Atlas
-        assetManager.load(Constants.TEXTURE_ATLAS_OBJECTS, TextureAtlas.class);
+        assetManager.load(com.wolfkhan66.wastedwhale.util.Constants.TEXTURE_ATLAS_OBJECTS, TextureAtlas.class);
 
         // Start loading assets and wait until finished
         assetManager.finishLoading();
@@ -41,7 +41,7 @@ public class Assets implements Disposable, AssetErrorListener{
         for (String a : assetManager.getAssetNames()) Gdx.app.debug(TAG, "asset: " + a);
 
 
-        TextureAtlas atlas = assetManager.get(Constants.TEXTURE_ATLAS_OBJECTS);
+        TextureAtlas atlas = assetManager.get(com.wolfkhan66.wastedwhale.util.Constants.TEXTURE_ATLAS_OBJECTS);
 
         // Enable texture filtering for pixel smoothing
         for (Texture t : atlas.getTextures()) {

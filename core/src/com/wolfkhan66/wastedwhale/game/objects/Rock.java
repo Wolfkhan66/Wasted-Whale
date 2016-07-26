@@ -1,4 +1,4 @@
-package com.wolfkhan66.wastedwhale;
+package com.wolfkhan66.wastedwhale.game.objects;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 /**
  * Created by caile_000 on 25/07/2016.
  */
-public class Rock extends AbstractGameObject {
+public class Rock extends com.wolfkhan66.wastedwhale.game.objects.AbstractGameObject {
     private TextureRegion regEdge;
     private TextureRegion regMiddle;
 
@@ -18,8 +18,8 @@ public class Rock extends AbstractGameObject {
 
     private void init (){
         dimension.set(1, 1.5f);
-        regEdge = Assets.instance.rock.edge;
-        regMiddle = Assets.instance.rock.middle;
+        regEdge = com.wolfkhan66.wastedwhale.game.Assets.instance.rock.edge;
+        regMiddle = com.wolfkhan66.wastedwhale.game.Assets.instance.rock.middle;
 
         // Start length of this rock
         setLength(1);

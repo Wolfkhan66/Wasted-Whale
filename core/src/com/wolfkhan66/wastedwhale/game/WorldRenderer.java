@@ -1,4 +1,4 @@
-package com.wolfkhan66.wastedwhale;
+package com.wolfkhan66.wastedwhale.game;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -11,15 +11,15 @@ import com.badlogic.gdx.utils.Disposable;
 public class WorldRenderer implements Disposable {
     private OrthographicCamera camera;
     private SpriteBatch batch;
-    private WorldController worldController;
+    private com.wolfkhan66.wastedwhale.game.WorldController worldController;
 
-    public WorldRenderer(WorldController worldController) {
+    public WorldRenderer(com.wolfkhan66.wastedwhale.game.WorldController worldController) {
         this.worldController = worldController;
         init();
     }
     private void init() {
         batch = new SpriteBatch();
-        camera = new OrthographicCamera(Constants.VIEWPORT_WIDTH, Constants.VIEWPORT_HEIGHT);
+        camera = new OrthographicCamera(com.wolfkhan66.wastedwhale.util.Constants.VIEWPORT_WIDTH, com.wolfkhan66.wastedwhale.util.Constants.VIEWPORT_HEIGHT);
         camera.position.set(0, 0, 0);
         camera.update();
     }
@@ -39,7 +39,7 @@ public class WorldRenderer implements Disposable {
     }
 
     public void resize(int width, int height) {
-        camera.viewportWidth = (Constants.VIEWPORT_WIDTH / height) * width;
+        camera.viewportWidth = (com.wolfkhan66.wastedwhale.util.Constants.VIEWPORT_WIDTH / height) * width;
         camera.update();
     }
 

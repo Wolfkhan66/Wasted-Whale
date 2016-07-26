@@ -1,4 +1,4 @@
-package com.wolfkhan66.wastedwhale;
+package com.wolfkhan66.wastedwhale.game;
 
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
@@ -18,7 +18,7 @@ public class WorldController extends InputAdapter {
     private static final String TAG = WorldController.class.getName();
     public Sprite[] testSprites;
     public int selectedSprite;
-    public CameraHelper cameraHelper;
+    public com.wolfkhan66.wastedwhale.util.CameraHelper cameraHelper;
 
     public WorldController() {
         init();
@@ -26,7 +26,7 @@ public class WorldController extends InputAdapter {
 
     public void init() {
         Gdx.input.setInputProcessor(this);
-        cameraHelper = new CameraHelper();
+        cameraHelper = new com.wolfkhan66.wastedwhale.util.CameraHelper();
         initTestObjects();
     }
 
@@ -66,9 +66,9 @@ public class WorldController extends InputAdapter {
 
         // Create a list of texture regions
         Array<TextureRegion> regions = new Array<TextureRegion>();
-        regions.add(Assets.instance.bunny.bunny);
-        regions.add(Assets.instance.feather.feather);
-        regions.add(Assets.instance.goldCoin.goldCoin);
+        regions.add(com.wolfkhan66.wastedwhale.game.Assets.instance.bunny.bunny);
+        regions.add(com.wolfkhan66.wastedwhale.game.Assets.instance.feather.feather);
+        regions.add(com.wolfkhan66.wastedwhale.game.Assets.instance.goldCoin.goldCoin);
 
         // Create new sprites using the just created texture
         for (int i = 0; i < testSprites.length; i++){

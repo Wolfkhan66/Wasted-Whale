@@ -1,4 +1,4 @@
-package com.wolfkhan66.wastedwhale;
+package com.wolfkhan66.wastedwhale.game.objects;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -7,7 +7,7 @@ import com.badlogic.gdx.math.MathUtils;
 /**
  * Created by caile_000 on 26/07/2016.
  */
-public class Mountains extends AbstractGameObject {
+public class Mountains extends com.wolfkhan66.wastedwhale.game.objects.AbstractGameObject {
 
     private TextureRegion regMountainLeft;
     private TextureRegion regMountainRight;
@@ -22,8 +22,8 @@ public class Mountains extends AbstractGameObject {
     private void init(){
         dimension.set(10, 2);
 
-        regMountainLeft = Assets.instance.levelDecoration.mountainLeft;
-        regMountainRight = Assets.instance.levelDecoration.mountainRight;
+        regMountainLeft = com.wolfkhan66.wastedwhale.game.Assets.instance.levelDecoration.mountainLeft;
+        regMountainRight = com.wolfkhan66.wastedwhale.game.Assets.instance.levelDecoration.mountainRight;
 
         // Shift mountain and extend length
         origin.x = -dimension.x * 2;

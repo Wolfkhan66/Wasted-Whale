@@ -1,4 +1,4 @@
-package com.wolfkhan66.wastedwhale;
+package com.wolfkhan66.wastedwhale.util;
 
 /**
  * Created by Cai Lehwald on 24/07/2016.

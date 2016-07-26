@@ -13,8 +13,8 @@ import com.badlogic.gdx.graphics.GL20;
 public class WastedWhaleMain implements ApplicationListener {
 	private static final String TAG = WastedWhaleMain.class.getName();
 
-	private WorldController worldController;
-	private WorldRenderer worldRenderer;
+	private com.wolfkhan66.wastedwhale.game.WorldController worldController;
+	private com.wolfkhan66.wastedwhale.game.WorldRenderer worldRenderer;
 	private boolean paused;
 
 	@Override public void create() {
@@ -22,10 +22,10 @@ public class WastedWhaleMain implements ApplicationListener {
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
 
 		// Load assets
-		Assets.instance.init(new AssetManager());
+		com.wolfkhan66.wastedwhale.game.Assets.instance.init(new AssetManager());
 		// Initialize controller and renderer
-		worldController = new WorldController();
-		worldRenderer = new WorldRenderer(worldController);
+		worldController = new com.wolfkhan66.wastedwhale.game.WorldController();
+		worldRenderer = new com.wolfkhan66.wastedwhale.game.WorldRenderer(worldController);
 
 		// Game world is active on start
 		paused = false;
@@ -63,6 +63,6 @@ public class WastedWhaleMain implements ApplicationListener {
 
 	@Override public void dispose() {
 		worldRenderer.dispose();
-		Assets.instance.dispose();
+		com.wolfkhan66.wastedwhale.game.Assets.instance.dispose();
 	}
 }
