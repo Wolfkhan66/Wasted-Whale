@@ -5,6 +5,8 @@ import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
+import com.wolfkhan66.wastedwhale.game.WorldController;
+import com.wolfkhan66.wastedwhale.game.WorldRenderer;
 
 /**
  * Created by Cai Lehwald on 24/07/2016.
@@ -13,8 +15,8 @@ import com.badlogic.gdx.graphics.GL20;
 public class WastedWhaleMain implements ApplicationListener {
 	private static final String TAG = WastedWhaleMain.class.getName();
 
-	private com.wolfkhan66.wastedwhale.game.WorldController worldController;
-	private com.wolfkhan66.wastedwhale.game.WorldRenderer worldRenderer;
+	private WorldController worldController;
+	private WorldRenderer worldRenderer;
 	private boolean paused;
 
 	@Override public void create() {
@@ -24,8 +26,8 @@ public class WastedWhaleMain implements ApplicationListener {
 		// Load assets
 		com.wolfkhan66.wastedwhale.game.Assets.instance.init(new AssetManager());
 		// Initialize controller and renderer
-		worldController = new com.wolfkhan66.wastedwhale.game.WorldController();
-		worldRenderer = new com.wolfkhan66.wastedwhale.game.WorldRenderer(worldController);
+		worldController = new WorldController();
+		worldRenderer = new WorldRenderer(worldController);
 
 		// Game world is active on start
 		paused = false;

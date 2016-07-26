@@ -6,6 +6,7 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.wolfkhan66.wastedwhale.game.objects.Level;
+import com.wolfkhan66.wastedwhale.util.CameraHelper;
 import com.wolfkhan66.wastedwhale.util.Constants;
 
 
@@ -14,7 +15,7 @@ import com.wolfkhan66.wastedwhale.util.Constants;
  */
 public class WorldController extends InputAdapter {
     private static final String TAG = WorldController.class.getName();
-    public com.wolfkhan66.wastedwhale.util.CameraHelper cameraHelper;
+    public CameraHelper cameraHelper;
     public Level level;
     public int lives;
     public int score;
@@ -25,7 +26,7 @@ public class WorldController extends InputAdapter {
 
     public void init() {
         Gdx.input.setInputProcessor(this);
-        cameraHelper = new com.wolfkhan66.wastedwhale.util.CameraHelper();
+        cameraHelper = new CameraHelper();
         lives = Constants.LIVES_START;
         initLevel();
     }

@@ -13,10 +13,10 @@ import com.wolfkhan66.wastedwhale.util.Constants;
 public class WorldRenderer implements Disposable {
     private OrthographicCamera camera;
     private SpriteBatch batch;
-    private com.wolfkhan66.wastedwhale.game.WorldController worldController;
+    private WorldController worldController;
     private OrthographicCamera cameraGUI;
 
-    public WorldRenderer(com.wolfkhan66.wastedwhale.game.WorldController worldController) {
+    public WorldRenderer(WorldController worldController) {
         this.worldController = worldController;
         init();
     }

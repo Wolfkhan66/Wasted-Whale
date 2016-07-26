@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.utils.Disposable;
+import com.wolfkhan66.wastedwhale.util.Constants;
 
 /**
  * Created by Cai Lehwald on 25/07/2016.
@@ -58,7 +59,7 @@ public class Assets implements Disposable, AssetErrorListener{
         assetManager.setErrorListener(this);
 
         // Load Texture Atlas
-        assetManager.load(com.wolfkhan66.wastedwhale.util.Constants.TEXTURE_ATLAS_OBJECTS, TextureAtlas.class);
+        assetManager.load(Constants.TEXTURE_ATLAS_OBJECTS, TextureAtlas.class);
 
         // Start loading assets and wait until finished
         assetManager.finishLoading();
@@ -66,7 +67,7 @@ public class Assets implements Disposable, AssetErrorListener{
         for (String a : assetManager.getAssetNames()) Gdx.app.debug(TAG, "asset: " + a);
 
 
-        TextureAtlas atlas = assetManager.get(com.wolfkhan66.wastedwhale.util.Constants.TEXTURE_ATLAS_OBJECTS);
+        TextureAtlas atlas = assetManager.get(Constants.TEXTURE_ATLAS_OBJECTS);
 
         // Enable texture filtering for pixel smoothing
         for (Texture t : atlas.getTextures()) {
