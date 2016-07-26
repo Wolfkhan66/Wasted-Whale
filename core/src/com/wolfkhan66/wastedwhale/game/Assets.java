@@ -103,7 +103,6 @@ public class Assets implements Disposable, AssetErrorListener{
 
     public class AssetBunny {
         public final TextureAtlas.AtlasRegion bunny;
-
         public AssetBunny (TextureAtlas atlas){
             bunny = atlas.findRegion("bunny_head");
         }
@@ -121,7 +120,6 @@ public class Assets implements Disposable, AssetErrorListener{
 
     public class AssetGoldCoin {
         public final TextureAtlas.AtlasRegion goldCoin;
-
         public AssetGoldCoin (TextureAtlas atlas){
             goldCoin = atlas.findRegion("item_gold_coin");
         }
@@ -129,7 +127,6 @@ public class Assets implements Disposable, AssetErrorListener{
 
     public class AssetFeather {
         public final TextureAtlas.AtlasRegion feather;
-
         public AssetFeather (TextureAtlas atlas){
             feather = atlas.findRegion("item_feather");
         }
