@@ -50,6 +50,53 @@ public class BunnyHead extends AbstractGameObject {
         timeLeftFeatherPowerup = 0;
     };
 
+    @Override
+    public void update(float deltaTime){
+        super.update(deltaTime);
+        if (velocity.x != 0){
+            view_direction = velocity.x < 0 ? VIEW_DIRECTION.LEFT : VIEW_DIRECTION.RIGHT;
+        }
+        if (timeLeftFeatherPowerup > 0){
+            timeLeftFeatherPowerup -= deltaTime;
+            if (timeLeftFeatherPowerup < 0){
+                // Disable power-up
+                timeLeftFeatherPowerup = 0;
+                setFeatherPowerup(false);
+            }
+        }
+    }
+
+    @Override
+    protected void  updateMotionY (float deltaTime){
+        switch (jump_state){
+            case GROUNDED:
+                jump_state = JUMP_STATE.FALLING;
+                break;
+            case JUMP_RISING:
+                // Keep track of jump time
+                timeJumping += deltaTime;
+                // Jump time left?
+                if (timeJumping <= JUMP_TIME_MAX){
+                    // Still jumping
+                    velocity.y = terminalVelocity.y;
+                }
+                break;
+            case FALLING:
+                break;
+            case JUMP_FALLING:
+                // Add delta times to track jump time
+                timeJumping += deltaTime;
+                // Jump to minimal height if jump key was pressed too short
+                if (timeJumping > 0 && timeJumping <= JUMP_TIME_MIN){
+                    // Still Jumping
+                    velocity.y = terminalVelocity.y;
+                }
+            }
+        if (jump_state != JUMP_STATE.GROUNDED){
+            super.updateMotionY(deltaTime);
+        }
+    }
+
     public void setJumping(boolean jumpKeyPressed){
         switch (jump_state){
             case GROUNDED: // Character is standing on a platform
