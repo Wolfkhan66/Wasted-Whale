@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Array;
 
 /**
- * Created by caile_000 on 26/07/2016.
+ * Created by Cai Lehwald on 26/07/2016.
  */
 public class Level {
     public static final String TAG  = Level.class.getName();
