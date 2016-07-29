@@ -2,6 +2,7 @@ package com.wolfkhan66.wastedwhale.game.objects;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.wolfkhan66.wastedwhale.game.Assets;
+import com.wolfkhan66.wastedwhale.util.Constants;
 
 /**
  * Created by Cai Lehwald on 29/07/2016.
@@ -73,6 +74,14 @@ public class BunnyHead extends AbstractGameObject {
         }
     }
 
-    public void setFeatherPowerup(boolean pickedUp){};
-    public boolean hasFeatherPowerup(){};
+    public void setFeatherPowerup(boolean pickedUp){
+        hasFeatherPowerup = pickedUp;
+        if (pickedUp){
+            timeLeftFeatherPowerup = Constants.ITEM_FEATHER_POWERUP_DURATION;
+        }
+    };
+
+    public boolean hasFeatherPowerup(){
+        return hasFeatherPowerup && timeLeftFeatherPowerup > 0;
+    };
 }
