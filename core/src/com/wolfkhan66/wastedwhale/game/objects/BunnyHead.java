@@ -1,5 +1,6 @@
 package com.wolfkhan66.wastedwhale.game.objects;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.wolfkhan66.wastedwhale.game.Assets;
 import com.wolfkhan66.wastedwhale.util.Constants;
@@ -49,6 +50,21 @@ public class BunnyHead extends AbstractGameObject {
         hasFeatherPowerup = false;
         timeLeftFeatherPowerup = 0;
     };
+
+    @Override
+    public void render(SpriteBatch batch){
+        TextureRegion reg = null;
+
+        // Set special color when game object has a feather power-up
+        if(hasFeatherPowerup){
+            batch.setColor(1.0f, 0.8f, 0.0f, 1.0f);
+        }
+        // Draw Image
+        reg = regHead;
+        batch.draw(reg.getTexture(),position.x, position.y, origin.x, origin.y, dimension.x, dimension.y, scale.x, scale.y, rotation, reg.getRegionX(), reg.getRegionY(), reg.getRegionWidth(), reg.getRegionHeight(), view_direction == VIEW_DIRECTION.LEFT, false);
+        // Reset color to white
+        batch.setColor(1, 1, 1, 1);
+    }
 
     @Override
     public void update(float deltaTime){
