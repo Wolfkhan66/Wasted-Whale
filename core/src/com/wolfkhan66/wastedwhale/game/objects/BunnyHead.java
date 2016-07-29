@@ -49,7 +49,30 @@ public class BunnyHead extends AbstractGameObject {
         timeLeftFeatherPowerup = 0;
     };
 
-    public void setJumping(boolean jumpKeyPressed){};
+    public void setJumping(boolean jumpKeyPressed){
+        switch (jump_state){
+            case GROUNDED: // Character is standing on a platform
+                if (jumpKeyPressed){
+                    // Start counting jump time from the beginning
+                    timeJumping = 0;
+                    jump_state = JUMP_STATE.JUMP_RISING;
+                }
+                break;
+            case JUMP_RISING: // Rising in the air
+                if ( !jumpKeyPressed) {
+                    jump_state = JUMP_STATE.JUMP_FALLING;
+                }
+                    break;
+            case FALLING: // Falling down
+            case JUMP_FALLING: // Falling Down after jump
+                if (jumpKeyPressed && hasFeatherPowerup){
+                    timeJumping = JUMP_TIME_OFFSET_FLYING;
+                    jump_state = JUMP_STATE.JUMP_RISING;
+                }
+                break;
+        }
+    }
+
     public void setFeatherPowerup(boolean pickedUp){};
     public boolean hasFeatherPowerup(){};
 }
