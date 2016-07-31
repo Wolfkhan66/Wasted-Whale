@@ -6,6 +6,7 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.math.Rectangle;
+import com.wolfkhan66.wastedwhale.game.objects.BunnyHead;
 import com.wolfkhan66.wastedwhale.game.objects.Feather;
 import com.wolfkhan66.wastedwhale.game.objects.GoldCoin;
 import com.wolfkhan66.wastedwhale.game.objects.Level;
@@ -111,7 +112,31 @@ public class WorldController extends InputAdapter {
     }
 
     private void onCollisionBunnyHeadWithRock(Rock rock){
+        BunnyHead bunnyHead = level.bunnyHead;
+        float heightDifference = Math.abs(bunnyHead.position.y - (rock.position.y + rock.bounds.height));
+        if (heightDifference > 0.25f){
+            boolean hitRightEdge = bunnyHead.position.x > (rock.position.x + rock.bounds.width / 2.0f);
+            if ( hitRightEdge){
+                bunnyHead.position.x = rock.position.x + rock.bounds.width;
+            }
+            else {
+                bunnyHead.position.x = rock.position.x - bunnyHead.bounds.width;
+            }
+            return;
+        }
 
+        switch (bunnyHead.jump_state){
+            case GROUNDED:
+                break;
+            case FALLING:
+            case JUMP_FALLING:
+                bunnyHead.position.y = rock.position.y + bunnyHead.bounds.height + bunnyHead.origin.y;
+                bunnyHead.jump_state = BunnyHead.JUMP_STATE.GROUNDED;
+                break;
+            case JUMP_RISING:
+                bunnyHead.position.y = rock.position.y + bunnyHead.bounds.height + bunnyHead.origin.y;
+                break;
+        }
     }
 
     private void onCollisionBunnyWithGoldCoin(GoldCoin goldCoin){
