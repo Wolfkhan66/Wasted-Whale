@@ -10,6 +10,9 @@ import com.badlogic.gdx.utils.Array;
  */
 public class Level {
     public static final String TAG  = Level.class.getName();
+    public BunnyHead bunnyHead;
+    public Array<GoldCoin> goldCoins;
+    public Array<Feather> feathers;
 
     public enum BLOCK_TYPE{
         EMPTY(0, 0, 0), // Black
@@ -48,6 +51,8 @@ public class Level {
     private void init (String filename){
         // Objects
         rocks = new Array<Rock>();
+        goldCoins = new Array<GoldCoin>();
+        feathers = new Array<Feather>();
 
         // Load image file that represents the level data
         Pixmap pixmap = new Pixmap(Gdx.files.internal(filename));
@@ -87,14 +92,26 @@ public class Level {
                 }
                 // Player spawn point
                 else if (BLOCK_TYPE.PLAYER_SPAWNPOINT.sameColor(currentPixel)){
+                    obj = new BunnyHead();
+                    offsetHeight = -3.0f;
+                    obj.position.set(pixelX, baseHeight * obj.dimension.y + offsetHeight);
+                    bunnyHead = (BunnyHead)obj;
                 }
 
                 // Feather
                 else if (BLOCK_TYPE.ITEM_FEATHER.sameColor(currentPixel)){
+                    obj = new Feather();
+                    offsetHeight = -1.5f;
+                    obj.position.set(pixelX, baseHeight * obj.dimension.y + offsetHeight);
+                    feathers.add((Feather)obj);
                 }
 
                 // Gold Coin
                 else if(BLOCK_TYPE.ITEM_GOLD_COIN.sameColor(currentPixel)){
+                    obj = new GoldCoin();
+                    offsetHeight = -1.5f;
+                    obj.position.set(pixelX, baseHeight * obj.dimension.y + offsetHeight);
+                    goldCoins.add((GoldCoin)obj);
                 }
 
                 // Unknown object/pixel color
