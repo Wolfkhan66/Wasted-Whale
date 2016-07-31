@@ -148,10 +148,41 @@ public class Level {
             rock.render(batch);
         }
 
+        // Draw Gold coins
+        for (GoldCoin goldCoin : goldCoins){
+            goldCoin.render(batch);
+        }
+
+        // Draw Feathers
+        for (Feather feather : feathers){
+            feather.render(batch);
+        }
+
+        // Daw Player Character
+        bunnyHead.render(batch);
+
         // Draw Water Overlay
         waterOverlay.render(batch);
 
         // Draw Clouds
         clouds.render(batch);
+    }
+
+    public void update(float deltaTime){
+        bunnyHead.update(deltaTime);
+
+        for (Rock rock : rocks){
+            rock.update(deltaTime);
+        }
+
+        for (GoldCoin goldCoin : goldCoins){
+            goldCoin.update(deltaTime);
+        }
+
+        for (Feather feather : feathers){
+            feather.update(deltaTime);
+        }
+
+        clouds.update(deltaTime);
     }
 }
