@@ -48,6 +48,7 @@ public class WorldController extends InputAdapter {
     public void update(float deltaTime) {
         handleDebugInput(deltaTime);
         level.update(deltaTime);
+        testCollisions();
         cameraHelper.update(deltaTime);
     }
 
@@ -140,11 +141,16 @@ public class WorldController extends InputAdapter {
     }
 
     private void onCollisionBunnyWithGoldCoin(GoldCoin goldCoin){
-
+        goldCoin.collected = true;
+        score += goldCoin.getScore();
+        Gdx.app.log(TAG, "Gold coin collected");
     }
 
     private void onCollisionBunnyWithFeather(Feather feather){
-
+        feather.collected = true;
+        score += feather.getScore();
+        level.bunnyHead.setFeatherPowerup(true);
+        Gdx.app.log(TAG, "Feather Collected");
     }
 
     private void testCollisions(){
