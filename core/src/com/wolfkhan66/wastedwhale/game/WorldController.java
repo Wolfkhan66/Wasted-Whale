@@ -14,7 +14,6 @@ import com.wolfkhan66.wastedwhale.game.objects.Rock;
 import com.wolfkhan66.wastedwhale.util.CameraHelper;
 import com.wolfkhan66.wastedwhale.util.Constants;
 
-
 /**
  * Created by Cai Lehwald on 24/07/2016.
  */
