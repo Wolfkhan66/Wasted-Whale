@@ -37,7 +37,7 @@ public class Constants {
 
     // Location of description file for skins
     public static final String SKIN_LIBGDX_UI = "images/uiskin.json";
-    public static final String SKIN_CANYONBUNNY_UI = "images/wastedwhale-ui.json";
+    public static final String SKIN_WASTEDWHALE_UI = "images/wastedwhale-ui.json";
 
 
 }
