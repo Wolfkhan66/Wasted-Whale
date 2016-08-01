@@ -20,6 +20,7 @@ public class DesktopLauncher {
 			settings.duplicatePadding = false;
 			settings.debug = drawDebugOutline;
 			TexturePacker.process(settings, "C:/Users/caile_000/Documents/GitHub/Wasted-Whale/desktop/assets-raw/images", "images", "wasted_whale.pack");
+			TexturePacker.process(settings, "C:/Users/caile_000/Documents/GitHub/Wasted-Whale/desktop/assets-raw/images-ui", "images", "wasted_whale-ui.pack");
 		}
 
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
