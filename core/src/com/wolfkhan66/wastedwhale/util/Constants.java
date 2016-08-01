@@ -31,4 +31,13 @@ public class Constants {
     // Delay after GAME OVER
     public static final float TIME_DELAY_GAME_OVER = 3;
 
+    // Location of UI Texture Atlas
+    public static final String TEXTURE_ATLAS_UI = "images/wasted_whale-ui.pack";
+    public static final String TEXTURE_ATLAS_LIBGDX_UI = "images.uiskin.atlas";
+
+    // Location of description file for skins
+    public static final String SKIN_LIBGDX_UI = "images/uiskin.json";
+    public static final String SKIN_CANYONBUNNY_UI = "images/wastedwhale-ui.json";
+
+
 }
