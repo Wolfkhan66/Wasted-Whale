@@ -37,7 +37,7 @@ public class Rock extends AbstractGameObject {
     }
 
     @Override
-    public  void render(SpriteBatch batch){
+    public void render(SpriteBatch batch) {
         TextureRegion reg = null;
         float relX = 0;
         float relY = 0;
