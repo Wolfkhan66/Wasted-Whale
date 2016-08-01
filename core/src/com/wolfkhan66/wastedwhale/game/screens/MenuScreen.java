@@ -4,6 +4,7 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.CheckBox;
@@ -15,6 +16,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Stack;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Window;
+import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.wolfkhan66.wastedwhale.util.Constants;
 
@@ -80,16 +82,36 @@ public class MenuScreen extends AbstractGameScreen {
 
     private Table buildBackgroundLayer () {
         Table layer = new Table();
+        // + Background
+        imgBackground = new Image(skinWastedWhale, "background");
+        layer.add(imgBackground);
         return layer;
     }
 
     private Table buildObjectsLayer () {
         Table layer = new Table();
+        // + Coins
+        imgCoins = new Image(skinWastedWhale, "coins");
+        layer.addActor(imgCoins);
+        imgCoins.setPosition(135, 80);
+        // + Bunny
+        imgBunny = new Image(skinWastedWhale, "bunny");
+        layer.addActor(imgBunny);
+        imgBunny.setPosition(355, 40);
         return layer;
     }
 
     private Table buildLogosLayer () {
         Table layer = new Table();
+        layer.left().top();
+        // + GameLogo
+        imgLogo = new Image(skinWastedWhale, "logo");
+        layer.add(imgLogo);
+        layer.row().expandY();
+        // + info Logos
+        imgInfo = new Image(skinWastedWhale, "info");
+        layer.add(imgInfo).bottom();
+        if (debugEnabled) layer.debug();
         return layer;
     }
 
@@ -100,7 +122,35 @@ public class MenuScreen extends AbstractGameScreen {
 
     private Table buildOptionsWindow () {
         Table layer = new Table();
+        layer.right().bottom();
+        // + Play Button
+        btnMenuPlay = new Button(skinWastedWhale, "play");
+        layer.add(btnMenuPlay);
+        btnMenuPlay.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                onPlayClicked();
+            }
+        });
+        layer.row();
+        // + Options Button
+        btnMenuOptions = new Button(skinWastedWhale, "options");
+        layer.add(btnMenuOptions);
+        btnMenuOptions.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                onOptionsClicked();
+            }
+        });
+        if (debugEnabled)layer.debug();
         return layer;
+    }
+
+    private void onPlayClicked() {
+        game.setScreen(new GameScreen(game));
+    }
+
+    private void onOptionsClicked () {
     }
 
     @Override
